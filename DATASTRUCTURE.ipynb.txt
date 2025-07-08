@@ -1,0 +1,1202 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')"
+      ],
+      "metadata": {
+        "id": "q_r9I2ALV2kH"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Data Structure\n"
+      ],
+      "metadata": {
+        "id": "xvrfVafInNpo"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "1.What are data structure,why are they imp?\n",
+        "  - Data structure  are imp for manupulating data,storing and organizing data etc. Data structure aressspecialformats used to data and manage it efficiently.\n",
+        "\n",
+        "2. Explain the difference between mutable and immutable datatypes with examples.\n",
+        "  - In mutable datatype   one can change the elements of data structure after creation but in case of  immutable datatype one can't change the elements of data structure.\n",
+        "  For examples of mutaabledata type  is list,dictionary etc.And that of immutable data type is tuple,string etc.\n",
+        "\n",
+        "3. What're  the main difference between list and tuple in Python?\n",
+        "   - 1. In case of list it is mutable data type but tuple is not mutable.\n",
+        "   2.tuples can be used as key in dictionary but list can't used as such.\n",
+        "   \n",
+        "4. Describe how dictionary stores data.\n",
+        "  - It stores value in key and value pairs.pairs.So that value can be retrieved efficiently with the help of key.key.By this the data stays organized,.\n",
+        "\n",
+        "5. Why might you use a set instead list of python?\n",
+        "   - 1. When ordering of the elements does not matter then set is used.\n",
+        "   2. When  mathematical set operations become necessary then also set is used.\n",
+        "   3. When Unique collection of elements are required then also set is used.\n",
+        "\n",
+        "6. What's string in python ,how it's different from a list?\n",
+        "  - string is a sequence of character, anything inside a quote is string.\n",
+        "  A list is mutable sequence of elements, it consists of string.\n",
+        "\n",
+        "7. How do tuples ensure data integrity in python?\n",
+        "  -  Once a tuple is created, its elements cannot be changed, added, or removed. Any attempt to modify a tuple after its creation will result in a TypeError. This fundamental characteristic directly contributes to data integrity in the following ways:\n",
+        "  1. Immutability prevents unintended alterations to datdata.\n",
+        "  2. This allows them to be used as keys in dictionaries, which require immutable objects for efficient lookup.\n",
+        "\n",
+        "8.What is hash table ,& how does it relate to DICTIONARY?\n",
+        "   - It  stores key-value pairs. dictionaries (dict) are a built-in data type in Python that are implemented using hash tables.\n",
+        "\n",
+        "9. Can list contain different data type in Python ?\n",
+        "  --Yes, a Python list can contain elements of different data types..Like string,booleans,number,tuples,dictionary etc.\n",
+        "\n",
+        "10. Explain why string are immutable in Python?\n",
+        "  - Because Immutability prevents unintended modifications to string values. Also it  can be reliably hashed, which is essential for their use as keys in dictionaries and elements in sets.\n",
+        "11. What advantages does dictionaries do offer over lists for certain tasks?\n",
+        "   - dictionaries helps to retrieving stored values. because they're saved in key-value pairs. & also it's easy to search through a dictionary.\n",
+        "12. Describe a scenario where using aatuple would preferable over a list?\n",
+        "  - If you have data that's not meant to be changed in the first place — such as critical information or records then  a tuple would be preferred  over a list. because tuple is immutable object.\n",
+        "\n",
+        "13. How do sets handle duplicate value in python?\n",
+        "  -  A set is defined as an unordered collection of unique elements. This means that if you attempt to add an element that already exists in a set, the set will simply ignore the addition, and the existing element will remain. No error will be raised, and the set will not grow in size due to the attempted addition of a duplicate.\n",
+        "\n",
+        "14. How does the \"in\" keyword work differently for lists &dictionaries?\n",
+        "  - In case of list it's used for iteration .And for dictionary it's used for zip function and iteration both.\n",
+        "\n",
+        "15. Can you modify the elements of a tuple? Explain why or why not.\n",
+        "   - No.\n",
+        "   Because tuples are immutable data type. The elements of the tuple can't be changed after creation.  It's tuple's nature.\n",
+        "\n",
+        "16. What is a nested dictionary? Give examples of it's use?\n",
+        "  - A nested dictionary is a dictionary where the value associated with a key is itself a dictionary. This allows for creating hierarchical data structures within a dictionary.\n",
+        "\n",
+        "17. Describe the time complexity of accessing elements in a dictionary.\n",
+        "  - Accessing elements in a dictionary typically has a time complexity of O(1) on average. This means that the time it takes to retrieve a value by its key is, on average, constant and doesn't depend on the size of the dictionary.\n",
+        "18. In what situation are list prefferred over dictionary?\n",
+        "  - Lists are generally preferred over dictionaries when order and sequence matter, or when performing operations like appending, extending, or iterating through elements sequentially are frequent.\n",
+        "\n",
+        "19. Why aare dictionaries considered unordered & how does that affect data retrieval?\n",
+        "  - They are considered unordered because they don't guarantee a specific order for their elements (key-value pairs) when accessed or iterated. They offer fast retrieval as order is not considered here.\n",
+        "\n",
+        "20. Explain the difference between a list & a dictionary in case of data retrieval?\n",
+        "  - A list is an ordered collection of items, whereas a dictionary is an unordered data collection in a key-value pair. Elements from the list can be accessed using the index, while the elements of the dictionary can be accessed using keys."
+      ],
+      "metadata": {
+        "id": "CLig2eXO9C1U"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "cttf0daw8VX4"
+      },
+      "outputs": [],
+      "source": [
+        "#PRACTICAL\n",
+        "\n",
+        "# 1.Write a code to create a string with your name & print it.\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "n = \"Rusha das \"\n",
+        "s =f\"my name is {n}\"\n",
+        "print(s)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "z7KELZIimjP4",
+        "outputId": "9a143989-06bb-42ca-99b7-9f3a455a174c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "my name is Rusha das \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. write a code to find the length of the string 'Hello World'."
+      ],
+      "metadata": {
+        "id": "L1nSAF54sXpc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "len(\"Hello World\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UmdoRh-ZqOE6",
+        "outputId": "870288b8-04f0-490c-b1bd-4075ad6e72ef"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "11"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Write a code to slice the first 3 characters from the string \"Python  Programming \"."
+      ],
+      "metadata": {
+        "id": "y7q0GYoXtvvS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "s = \"Python Programming\"\n",
+        "s[2:]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 36
+        },
+        "id": "39j-sbGzuOZT",
+        "outputId": "407a6edf-e26e-4397-9a75-c04fd59a5b4b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'thon Programming'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 12
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. write a code to cconvertthe string \"hello \" to uppercase."
+      ],
+      "metadata": {
+        "id": "5iGyKcnPvM9W"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "t = \"hello \"\n",
+        "t.upper()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 36
+        },
+        "id": "HuEex0YCvLp_",
+        "outputId": "065fa2fd-f7ae-49ab-c46b-3c5378edbbee"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'HELLO '"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5. Write a code to replace 'apple' wiith 'orange ' in the string 'I llike apple '"
+      ],
+      "metadata": {
+        "id": "qh60Vufmv6Gf"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "s =\" I like apple \"\n",
+        "s.replace (\"apple\",\"orange\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 36
+        },
+        "id": "NAL1414Lv6xg",
+        "outputId": "f4e39e4b-3079-4d36-c404-e49d61cccbc8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "' I like orange '"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6. Write a code to create a list with no 1-5 & print it.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "9-CVGlH1xbfF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "no=[1,2,3,4,5]\n",
+        "no"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gdCO3mLPyhHP",
+        "outputId": "b6ac6322-83b9-465e-b7e9-3cd714019af2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 3, 4, 5]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7. Write a code to append the no. 10 to the list [1,2,3,4]"
+      ],
+      "metadata": {
+        "id": "za_nsCaVyyB5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l= [1,2,3,4]\n",
+        "l.append(10)\n",
+        "l"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "I4q2LsB9yy7g",
+        "outputId": "22e51981-f21e-4a53-cb2e-2146afaae855"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 3, 4, 10]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 21
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8. Write a code to remove the number 3 from the list [1,2,3,4,5]."
+      ],
+      "metadata": {
+        "id": "fecrNiIMzhgk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l = [1,2,3,4,5]\n",
+        "l.remove(3)\n",
+        "l"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CfHNb7rQzh4d",
+        "outputId": "85f7f4bd-8441-4831-db63-a3c79cd3f076"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 4, 5]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 22
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9. Write a code to access the 2nd elemant in the list ['a','b','c','d']"
+      ],
+      "metadata": {
+        "id": "k0IlEmjs0EXs"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "llist =  ['a','b','c','d']\n",
+        "llist [1]"
+      ],
+      "metadata": {
+        "id": "CAp0fjHN0E5U"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10. Write a code to reverse the list [10,20,30,40,50]"
+      ],
+      "metadata": {
+        "id": "mjv8mePX5vKq"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l = [10,20,30,40,50]\n",
+        "l[::-1]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4KUYKF0l5vuh",
+        "outputId": "e3cd35d2-26af-4c5c-aa21-c326c7755d7a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[50, 40, 30, 20, 10]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "11. Write a code to create a tuple with the elements 100,200,300 and print it."
+      ],
+      "metadata": {
+        "id": "YA63VbRB6GUe"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tuple= (100,200,300)\n",
+        "print(tuple)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "f28DPhsw6GxV",
+        "outputId": "8dd37910-ad24-4326-f0cb-4512cc943ad1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(100, 200, 300)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "12. write a code to access the 2nd  to last element of the tuple (\"red\",\"green\",\"blue\",\"yellow\")"
+      ],
+      "metadata": {
+        "id": "2NK63WQE63Xa"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "t = (\"red\",\"green\",\"blue\",\"yellow\")\n",
+        "t[-2]\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 36
+        },
+        "id": "0xgM4iPw63uD",
+        "outputId": "1e036938-10c0-478b-b201-1d55bd0262eb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'blue'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 25
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "13. write a code to find the minimum number in the tuple (10, 20,5,15)"
+      ],
+      "metadata": {
+        "id": "MBAbxo5_8Z28"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "t = (10, 20,5,15)\n",
+        "min(t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QGnn4Rw28aSN",
+        "outputId": "664dfc1b-bf66-4a3f-d879-e48676731f2f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "5"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 26
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "14. write a code to find the index of the element \"cat\" in the tuple (\"dog\",\"cat\",\"rabbit\")"
+      ],
+      "metadata": {
+        "id": "SItJIFIA8511"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "t =(\"dog\",\"cat\",\"rabbit\")\n",
+        "t.index(\"cat\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_zlX_2G386PH",
+        "outputId": "19f36974-ce40-4a57-cfe8-633b5a3d1857"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "1"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 27
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "15. Write a code to create a tuple containing 3 different fruits & check if \"kiwi\" is in it."
+      ],
+      "metadata": {
+        "id": "CQuZ7PYx_vSd"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "t = (\"apple\",\"kiwi\",\" mango\")\n",
+        "if \"kiwi\" in this t:\n",
+        "  print(t)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 106
+        },
+        "id": "nXP_tLr9_vnm",
+        "outputId": "28ca8edf-726b-4393-cef3-387a3167ce98"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "invalid syntax (ipython-input-38-3394451289.py, line 2)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipython-input-38-3394451289.py\"\u001b[0;36m, line \u001b[0;32m2\u001b[0m\n\u001b[0;31m    if \"kiwi\" in this t:\u001b[0m\n\u001b[0m                      ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "16. write a code to create a set with elements \"a\",\"b\",\"c\" & print it."
+      ],
+      "metadata": {
+        "id": "XZcX6-NzCAAR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "s = { \"a\",\"b\",\"c\" }\n",
+        "print(s)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RYQwXoryCAXo",
+        "outputId": "62d3a3a8-ae44-4778-8885-3c13282d2f3d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'b', 'a', 'c'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "17. write a code toccclearall the elements from the set {1,2,3,4,5}"
+      ],
+      "metadata": {
+        "id": "Og3gFlc9EUR4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "set = {1,2,3,4,5}\n",
+        "set.clear()\n",
+        "set"
+      ],
+      "metadata": {
+        "id": "dRs_ifWpEU3A",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c2c60159-c285-4167-d1b7-c909aadc5ac6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "set()"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 48
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "18. write a code to remove the element 4 from the set {1,2,3,4}"
+      ],
+      "metadata": {
+        "id": "IcOeUjELMjZ-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "s =  {1,2,3,4}\n",
+        "s.remove(4)\n",
+        "s"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hWk7YVooMjvi",
+        "outputId": "bffa506d-c568-4452-f2e5-498f6e35361d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{1, 2, 3}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 49
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "19. write a code to find the union of the 2 sets {1,2,3} & {3,4,5}"
+      ],
+      "metadata": {
+        "id": "xzzpft10M75A"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "s1 = {1,2,3}\n",
+        "s2 =  {3,4,5}\n",
+        "s1|s2"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6KNTmfVYM8N4",
+        "outputId": "398fdf9e-b76c-4fe0-aa77-4534ca0a0828"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{1, 2, 3, 4, 5}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 50
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "20. write a code to find the intersection of 2 sets {1,2,3} & {2,3,4}"
+      ],
+      "metadata": {
+        "id": "SF2TPNCvNWLG"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "s1 =  {1,2,3}\n",
+        "s2 =  {2,3,4}\n",
+        "s1&s2"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-saANY72NWjf",
+        "outputId": "a9f585d9-cb4a-4f91-901b-e779e367bdde"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{2, 3}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 51
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "21. write a code to create a dictionary with keys with \"name\",\"age\" &\"city\"  & print it."
+      ],
+      "metadata": {
+        "id": "kCPuUjPRN1_i"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "d = {\"name\":\"rusha\",\"age\":20,\"city\":\"Boston\"}\n",
+        "print (d)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yQb9aepnN2Sf",
+        "outputId": "d3cec4cf-0f44-4b16-edbf-8ed4c6578529"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'rusha', 'age': 20, 'city': 'Boston'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "22. write a code to add a new key-value pair \"country\":\"USA\" to the dictionary {\"name\":\"john\",\"age\":25}"
+      ],
+      "metadata": {
+        "id": "eA_d5YW1PGGy"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "s =  {\"name\":\"john\",\"age\":25}\n",
+        "s[\"country\"] = \"USA\"\n",
+        "s"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "e52ARPFLPGXc",
+        "outputId": "42f39e15-511a-489c-d8a6-454224a165b3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'name': 'john', 'age': 25, 'country': 'USA'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 56
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "23. write a code to access the value associated with the key \"name' in the dictionary { \"name' :Alice,\"age\":30}"
+      ],
+      "metadata": {
+        "id": "t7-G-hOwQc_i"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "d = { \"name\":\"Alice\",\"age\" :30}\n",
+        "d[\"name\"]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 36
+        },
+        "id": "cB0CFFetQdVU",
+        "outputId": "751743e4-12da-440f-f179-81983be0f05e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Alice'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 60
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "24. write a code to remove the key 'age' from the dictionary  {\"name\":\"Bob\", \"age\":22,\"city\":\"new york\"}"
+      ],
+      "metadata": {
+        "id": "lro4zAGtRqCQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "set = {\"name\":\"Bob\", \"age\":22,\"city\":\"new york\"}\n",
+        "set.pop( \"age\")\n",
+        "set"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HR9lUoPxRqVY",
+        "outputId": "fdf4ecd5-f835-4839-ff99-dc884887d238"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'name': 'Bob', 'city': 'new york'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 61
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "25. write a code to check if the key \"city\" exists in the dictionary  {\"name\":\"Alice\",\"city\":Paris}"
+      ],
+      "metadata": {
+        "id": "p1CUOnRESoc1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "s =  {\"name\":\"Alice\",\"city\":\"Paris\"}\n",
+        "s.keys()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2E1UB0ckSpE1",
+        "outputId": "654d3518-e726-4551-8b3b-128e800ad1e7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "dict_keys(['name', 'city'])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 62
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "26. write a code to a list,a tuple & a dictionary and  print all."
+      ],
+      "metadata": {
+        "id": "-JcQ265fTjax"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "d = {\"name \":[\"Ajay\",\"Rusha\"],\"contact\":(1234,56789),\"city\":\"kolkata\"}\n",
+        "print(d)"
+      ],
+      "metadata": {
+        "id": "zfFQIK_2Tjw4",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b9e42b45-6306-4281-e6fe-8abda47b5963"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name ': ['Ajay', 'Rusha'], 'contact': (1234, 56789), 'city': 'kolkata'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "27. write a code to create a list of 5 random number between 1 &100, sort it in ascending order and print the result."
+      ],
+      "metadata": {
+        "id": "2Vx6gAaiGO14"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l = [54,87,12,90,46]\n",
+        "sorted(l)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2ejhV86XGPOK",
+        "outputId": "063f7ed8-f8bd-4f38-a940-1551f40b690e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[12, 46, 54, 87, 90]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "28. write a code to create a :list with string & print the elements at the 33rd index."
+      ],
+      "metadata": {
+        "id": "iy0A73_EHnZf"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l = [\"rose \",\"pitunia \",\"tulip \",\"lavender \"]\n",
+        "l[2]"
+      ],
+      "metadata": {
+        "id": "BT41r5RNHnvq",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 36
+        },
+        "outputId": "318cfee6-f818-4d45-847f-09649842ca2e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'tulip '"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "29. write a code to combine 2 dictionaries intinto one & print the results."
+      ],
+      "metadata": {
+        "id": "cVby9jHRPAUw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "d1 ={\"Rusha \", \"Ajay \"}\n",
+        "d2 = {\"Rose \",\"Tulip \"}\n",
+        "{d1:d2 for d1,d2 in zip (d1,d2)}"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "J1yh1V3qPA4G",
+        "outputId": "830aa7d1-b2d8-4122-b057-bea6ee58be7c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'Ajay ': 'Tulip ', 'Rusha ': 'Rose '}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "30. write a code to convert a list of string into set."
+      ],
+      "metadata": {
+        "id": "cjN5PVolTwyn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l = [\"rose \",\"pitunia \",\"tulip \",\"lavender \"]\n",
+        "s = set(l)\n",
+        "s"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HwVIky49TxJO",
+        "outputId": "8c879872-0646-478e-c559-e527a8096f8f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{'lavender ', 'pitunia ', 'rose ', 'tulip '}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    }
+  ]
+}
